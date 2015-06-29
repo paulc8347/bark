@@ -23,6 +23,165 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
     
+    <!-- Modals -->
+    
+    
+    <!--loginModal-->
+    <div class="modal fade" id="loginModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeLoginModal"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">login</h4>
+                </div>
+                <div class="modal-body" align="left">
+                    <form class="form-horizontal">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <label id="loginModalAlertLabel" style="color: #ac2925"></label>
+                        </div>
+                        <div class="form-group" id="loginUsernameFormGroup">
+                            <label for="inputLoginUsername" class="col-sm-2 control-label">
+                                Username:
+                            </label> 
+                            <div class="col-sm-10">
+                                 <input type="text" class="form-control" id="inputLoginUsername">
+                            </div>
+                        </div>
+                        <div class="form-group" id="loginPasswordFormGroup">
+                            <label for="inputLoginPassword" class="col-sm-2 control-label">
+                                Password:
+                            </label> 
+                            <div class="col-sm-10">
+                                 <input type="password" class="form-control" id="inputLoginPassword">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-6">
+                                <label><input type="checkbox" id="keepMeSignedIn" value="">&nbsp&nbspkeep me signed in&nbsp&nbsp</label>
+                                <button class="btn btn-modal" id="submitLoginButton" style="width: 75px">login</button>
+                            </div>
+                            <div class="col-sm-4" align="right">
+                                <button class="btn btn-forgot" id="forgotPasswordButton">
+                                    forgot my password
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button class="btn btn-signup" id="signUpFromLoginButton">don't have an account? thats ok sign up here!</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- RecoverPasswordModal -->
+    <div class="modal fade" id="recoverPasswordModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeRecoverPasswordModal"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">recover password</h4>
+                </div>
+                <div class="modal-body" align="left">
+                    <form class="form-horizontal">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <label id="recoverPasswordModalAlertLabel" style="color: #ac2925"></label>
+                        </div>
+                        <div class="form-group" id="recoverPasswordUsernameFormGroup">
+                            <label for="inputLoginUsername" class="col-sm-2 control-label">
+                                Username:
+                            </label> 
+                            <div class="col-sm-10">
+                                 <input type="text" class="form-control" id="recoverPasswordUsername">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-6">
+                                <button class="btn btn-modal" id="recoverPasswordButton">send recovery email</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- signUpModal -->
+    
+    <div class="modal fade" id="signupModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeSignupModal"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">create an account</h4>
+                </div>
+                <div class="modal-body" align="left">
+                    <form class="form-horizontal">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <label id="signupModalAlertLabel" style="color: #ac2925"></label>
+                        </div>
+                        <div class="form-group" id="signupUsernameFormGroup">
+                            <label for="inputSignupUsername" class="col-sm-2 control-label">
+                                Username:
+                            </label> 
+                            <div class="col-sm-10">
+                                 <input type="text" class="form-control" id="inputSignupUsername">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSignuoEmail" class="col-sm-2 control-label">
+                                Email:
+                            </label> 
+                            <div class="col-sm-10">
+                                 <input type="text" class="form-control" id="inputSignupEmail">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmSignupEmail" class="col-sm-2 control-label">
+                                Confirm Email:
+                            </label> 
+                            <div class="col-sm-10">
+                                 <input type="text" class="form-control" id="confirmSignupEmail">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSignupPassword" class="col-sm-2 control-label">
+                                Password:
+                            </label> 
+                            <div class="col-sm-10">
+                                 <input type="password" class="form-control" id="inputSignupPassword">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmSignupPassword" class="col-sm-2 control-label">
+                                Confirm Password:
+                            </label> 
+                            <div class="col-sm-10">
+                                 <input type="password" class="form-control" id="confirmSignupPassword">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-6">
+                                <label><input type="checkbox" id="keepMeSignedIn" value="">&nbsp&nbspsend me email alerts&nbsp&nbsp</label>
+                                <button class="btn btn-modal" id="submitSignupButton" style="width: 75px">sign up!</button>
+                            </div>
+                            <div class="col-sm-4" align="right">
+                                <button class="btn btn-modal" id="signupAlreadyAMemberButton">
+                                    already a member
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- /Modals -->
+    
 	<!-- Preloader -->
 	<div id="preloader">
 	  <div id="load"></div>
@@ -61,12 +220,12 @@
                     <img class="intro-banner">
 		</div>
 		<div class="page-scroll">
-                    <a href="#service" class="btn btn-circle">
-                            ~login~
-			</a>
-                        <a href="#service" class="btn btn-circle">
-                            ~sign up~
-			</a>
+                    <a href="#service" class="btn btn-circle" id="loginButton">
+                        ~login~
+                    </a>
+                    <a href="#service" class="btn btn-circle" id="signupButton">
+                        ~sign up~
+                    </a>
 		</div>
     </section>
 	<!-- /Section: intro -->
@@ -88,7 +247,7 @@
 					</div>
 				</div>
 			</div>
-			</div>
+                    </div>
 		</div>
 		<div class="container">
 		<div class="row">
@@ -96,61 +255,51 @@
 				<hr class="marginbot-50">
 			</div>
 		</div>
+                    
         <div class="row">
-            <div class="col-sm-3 col-md-3">
-				<div class="wow fadeInLeft" data-wow-delay="0.2s">
-                <div class="service-box">
-					<div class="service-icon">
-						<img src="img/service-icon-1.png" alt="" />
-					</div>
-					<div class="service-desc">
-						<h5>Print</h5>
-						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-					</div>
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="wow fadeInUp" data-wow-delay="0.3s">
+                    <h4 style="font-weight: 400">
+                        bark was born out of a simple need and has developed into so much more. on any given night you have seemingly endless options of where to go.
+                        bark will show which establishments in your area are the most well-attended if you’re in the mood for a crowd,
+                        and which are the emptiest if you’re looking to enjoy a couple quiet drinks with your friends. no matter what your definition of a “fun bar” consists of,
+                        bark is a necessary addition for anyone trying to plan out their evening! 
+                    </h4>
                 </div>
-				</div>
             </div>
-			<div class="col-sm-3 col-md-3">
-				<div class="wow fadeInUp" data-wow-delay="0.2s">
-                <div class="service-box">
-					<div class="service-icon">
-						<img src="img/service-icon-2.png" alt="" />
-					</div>
-					<div class="service-desc">
-						<h5>Web Design</h5>
-						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-					</div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-1 col-md-1"></div>
+            <div class="col-sm-4 col-md-4">
+                <div class="wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <img src="img/service-icon-2.png" alt="" />
+                        </div>
+                        <div class="service-desc">
+                            <h5>Map</h5>
+                            <p>see bars, parties, and clubs in your area. see how full they are and who you know that's there</p>
+                        </div>
+                    </div>
                 </div>
-				</div>
             </div>
-			<div class="col-sm-3 col-md-3">
-				<div class="wow fadeInUp" data-wow-delay="0.2s">
-                <div class="service-box">
-					<div class="service-icon">
-						<img src="img/service-icon-3.png" alt="" />
-					</div>
-					<div class="service-desc">
-						<h5>Photography</h5>
-						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-					</div>
+            <div class="col-sm-2 col-md-2"></div>
+            <div class="col-sm-4 col-md-4">
+                <div class="wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="service-box">
+                        <div class="service-icon">
+                            <img src="img/service-icon-3.png" alt="" />
+                        </div>
+                        <div class="service-desc">
+                            <h5>Share Photos</h5>
+                            <p>look at a live stream of photos being posted from bars and parties in your area or post your own and invite your friends to meet you.</p>
+                        </div>
+                    </div>
                 </div>
-				</div>
-            </div>
-			<div class="col-sm-3 col-md-3">
-				<div class="wow fadeInRight" data-wow-delay="0.2s">
-                <div class="service-box">
-					<div class="service-icon">
-						<img src="img/service-icon-4.png" alt="" />
-					</div>
-					<div class="service-desc">
-						<h5>Cloud System</h5>
-						<p>Vestibulum tincidunt enim in pharetra malesuada. Duis semper magna metus electram accommodare.</p>
-					</div>
-                </div>
-				</div>
             </div>
         </div>		
-		</div>
+	</div>
 	</section>
 	<!-- /Section: about -->
 	

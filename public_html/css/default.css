@@ -36,3 +36,8 @@ footer {
   background-color: #67b0d1;
   border-color: #67b0d1;
 }
+
+
+.modal-open {
+    overflow: scroll;
+}
