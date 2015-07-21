@@ -37,6 +37,13 @@
     
     //loginModal
     
+    $("#navLoginButton").click(function(evt) {
+        document.getElementById("inputLoginUsername").value = "";
+        document.getElementById("inputLoginPassword").value = "";
+        
+        $("#loginModal").modal('show');
+    });
+    
     $("#loginButton").click(function(evt) {
         document.getElementById("inputLoginUsername").value = "";
         document.getElementById("inputLoginPassword").value = "";
@@ -83,7 +90,7 @@
         $("#recoverPasswordModal").modal('hide');
     });
     
-    $("#submitRecoverPassword").click(function(evt) {
+    $("#recoverPasswordButton").click(function(evt) {
         $("#recoverPasswordModal").modal('hide');
     });
     

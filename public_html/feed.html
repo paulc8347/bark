@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Paul Colella">
+
+    <title>bark: feed</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/feed/feed_bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-social.css" rel="stylesheet" type="text/css">
+    
+<!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">-->
+
+    <!-- Fonts -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/animate.css" rel="stylesheet" />
+    <!-- Squad theme CSS -->
+    <link href="css/feed/feed_style.css" rel="stylesheet">
+    <link href="css/default.css" rel="stylesheet">
+</head>
+
+
+<body>
+    
+    <!--    Modals-->
+    <div class="modal fade" id="settingsModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeLoginModal"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">settings</h4>
+                </div>
+                <div class="modal-body" align="left">
+                    <form class="form-horizontal">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <label id="loginModalAlertLabel" style="color: #ac2925"></label>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputLoginUsername" class="col-sm-2 control-label">
+                                Location
+                            </label> 
+                            <div class="col-sm-10">
+                                 <input type="text" class="form-control" id="settingsLocation">
+                            </div>
+                        </div>
+                        <div class="form-group" id="loginPasswordFormGroup">
+                            <label for="inputLoginPassword" class="col-sm-2 control-label">
+                                Distance
+                            </label> 
+                            <div class="col-sm-10">
+                                 <input type="password" class="form-control" id="inputLoginPassword">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-6">
+                                <label><input type="checkbox" id="keepMeSignedIn" value="">&nbsp&nbspkeep me signed in&nbsp&nbsp</label>
+                                <button class="btn btn-modal" id="submitLoginButton" style="width: 75px">login</button>
+                            </div>
+                            <div class="col-sm-4" align="right">
+                                <button class="btn btn-forgot" id="forgotPasswordButton">
+                                    forgot my password
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button class="btn btn-signup" id="signUpFromLoginButton">don't have an account? thats ok sign up here!</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    <div id="preloader">
+        <div id="load"></div>
+    </div>
+    
+    <nav class="navbar navbar-custom navbar-fixed-top top-nav-collapse" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <h1>
+                        bark
+                        <img src="img/logos/bark_logo.PNG" height="40" width="40">
+                    </h1>
+                </a>
+                
+            </div>
+            <div class="col-sm-3 col-md-3 pull-right" style="margin-top: 5px">
+                <form class="navbar-form" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                
+                <ul class="nav navbar-nav">
+                    <li><a href="#liked" class="glyphicon glyphicon-heart"></a></li>
+                    <li><a href="#alerts" class="glyphicon glyphicon-envelope"><b id="alertsBadge" class="badge">4</b></a></li>
+                    <li id="navLoginButton0"><a href="#about">paul</a></li>
+<!--                    <li id="navLoginButton"><a href="#about" class="glyphicon glyphicon-user"></a></li>-->
+                    <li><a href="#menu" class="glyphicon glyphicon-chevron-down"></a></li>
+                </ul>
+                
+                
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    
+    <section id="about" class="fixed-header-section bg-eggshell">
+	<div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center" style="padding-bottom: 10px">
+                    <div class="centered-pills">
+                        <ul class="nav nav-pills custom-pills">
+                            <li id="localFeedPill" role="presentation" class="active"><a href="#feed">feed</a></li>
+                            <li id="mapPill" role="presentation"><a href="#map">map</a></li>
+                            <li id="friendsFeedPill" role="presentation"><a href="#friends">friends</a></li>
+                            <li id="offersPill" role="presentation"><a href="#offers">offers</a></li>
+                            <li id="offersPill" role="presentation"><a href="#help">help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="searchRowSmall" class="row settings-small">
+                <div class="col-sm-12 text-center">
+                    <button id="settingBtn" class="btn btn-modal">
+                        narrow search
+                    </button>
+                </div>
+            </div>
+            <div id="searchRowLarge" class="row settings-large">
+                <div class="col-sm-2">
+                    <button id="settingBtn" class="btn btn-modal">
+                        change
+                    </button>
+                </div>
+                <div class="col-sm-8 text-center">
+                    <button id="settingBtn" class="btn btn-hidden">
+                        packed house <a class="glyphicon glyphicon-chevron-down"></a>
+                    </button>
+                    <button id="distanceBtn" class="btn btn-hidden">
+                        within 0.5 miles of <a class="glyphicon glyphicon-chevron-down"></a>
+                    </button>
+                    <button id="locationBtn" class="btn btn-hidden">
+                        642 S Clark St, Chicago <a class="glyphicon glyphicon-chevron-down"></a>
+                    </button>
+                </div>
+            </div>
+	</div>
+    </section>
+    
+    <!--    interchangeable content-->
+    
+    <section class="content-section">
+        
+        <div id="feed" class="container toggle-content">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 well">
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </section>
+    
+    
+        
+        
+        
+        
+          
+    
+    <!-- Core JavaScript Files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.easing.min.js"></script>	
+	<script src="js/jquery.scrollTo.js"></script>
+	<script src="js/index/wow.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/feed/feed_custom.js"></script>
+    
+    
+</body>
+</html>
