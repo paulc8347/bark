@@ -40,6 +40,14 @@
         });
     });
     
+    //settingsModal
+    
+    $("#settingsBtn").click(function(evt) {
+        $("#settingsModal").modal('show');
+    })
+    
+    //endSettingsModal
+    
     //loginModal
     
     $("#navLoginButton").click(function(evt) {
@@ -87,50 +95,4 @@
     
     //end loginModal
 
-    //recoverPasswordModal
-    
-    $("#closeRecoverPasswordModal").click(function(evt) {
-        document.getElementById("recoverPasswordUsername").value = "";
-        
-        $("#recoverPasswordModal").modal('hide');
-    });
-    
-    $("#recoverPasswordButton").click(function(evt) {
-        $("#recoverPasswordModal").modal('hide');
-    });
-    
-    //end recoverPasswordModal
-    
-    //signupModal
-    $("#signupButton").click(function(evt) {
-        document.getElementById("inputSignupUsername").value = "";
-        document.getElementById("inputSignupEmail").value = "";
-        document.getElementById("confirmSignupEmail").value = "";
-        document.getElementById("inputSignupPassword").value = "";
-        document.getElementById("confirmSignupPassword").value = "";
-        $("#signupModal").modal("show");
-    });
-    
-    $("#closeSignupModal").click(function(evt) {
-        document.getElementById("inputSignupUsername").value = "";
-        document.getElementById("inputSignupEmail").value = "";
-        document.getElementById("confirmSignupEmail").value = "";
-        document.getElementById("inputSignupPassword").value = "";
-        document.getElementById("confirmSignupPassword").value = "";
-        $("#signupModal").modal("hide");
-    });
-    
-    $("#submitSignupButton").click(function(evt) {
-        $("#signupModal").modal("hide");
-    });
-    
-    $("#signupAlreadyAMemberButton").click(function(evt) {
-        $("#signupModal").modal("hide");
-
-        document.getElementById("inputLoginUsername").value = "";
-        document.getElementById("inputLoginPassword").value = "";
-        
-        $("#loginModal").modal('show');
-    });
-    //end signupModal
 })(jQuery);

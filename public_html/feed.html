@@ -22,9 +22,15 @@ and open the template in the editor.
     <!-- Fonts -->
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="css/animate.css" rel="stylesheet" />
-    <!-- Squad theme CSS -->
+        
+        
     <link href="css/feed/feed_style.css" rel="stylesheet">
     <link href="css/default.css" rel="stylesheet">
+    
+    <!-- Plugin: ion range slider -->
+    <link href="plugins/ion.rangeSlider-2.0.12/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <link href="plugins/ion.rangeSlider-2.0.12/css/ion.rangeSlider.css" rel="stylesheet">
+    
 </head>
 
 
@@ -35,7 +41,7 @@ and open the template in the editor.
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeLoginModal"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeSettingsModal"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">settings</h4>
                 </div>
                 <div class="modal-body" align="left">
@@ -44,35 +50,30 @@ and open the template in the editor.
                             <label id="loginModalAlertLabel" style="color: #ac2925"></label>
                         </div>
                         <div class="form-group">
-                            <label for="inputLoginUsername" class="col-sm-2 control-label">
-                                Location
+                            <label for="settingsLocation" class="col-sm-2 control-label">
+                                location
                             </label> 
                             <div class="col-sm-10">
                                  <input type="text" class="form-control" id="settingsLocation">
                             </div>
                         </div>
-                        <div class="form-group" id="loginPasswordFormGroup">
-                            <label for="inputLoginPassword" class="col-sm-2 control-label">
-                                Distance
+                        <div class="form-group">
+                            <label for="settingsDistance" class="col-sm-2 control-label">
+                                distance
+                            </label>
+                            <div class="col-sm-10">
+                                
+                                
+                                
+                                 <input type="text" class="form-control" id="settingsDistance">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="settingsDistance" class="col-sm-2 control-label">
+                                size
                             </label> 
                             <div class="col-sm-10">
-                                 <input type="password" class="form-control" id="inputLoginPassword">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-6">
-                                <label><input type="checkbox" id="keepMeSignedIn" value="">&nbsp&nbspkeep me signed in&nbsp&nbsp</label>
-                                <button class="btn btn-modal" id="submitLoginButton" style="width: 75px">login</button>
-                            </div>
-                            <div class="col-sm-4" align="right">
-                                <button class="btn btn-forgot" id="forgotPasswordButton">
-                                    forgot my password
-                                </button>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button class="btn btn-signup" id="signUpFromLoginButton">don't have an account? thats ok sign up here!</button>
+                                 <input type="text" class="form-control" id="settingsDistance">
                             </div>
                         </div>
                     </form>
@@ -148,26 +149,26 @@ and open the template in the editor.
             </div>
             <div id="searchRowSmall" class="row settings-small">
                 <div class="col-sm-12 text-center">
-                    <button id="settingBtn" class="btn btn-modal">
+                    <button id="settingsBtnSmall" class="btn btn-modal">
                         narrow search
                     </button>
                 </div>
             </div>
             <div id="searchRowLarge" class="row settings-large">
                 <div class="col-sm-2">
-                    <button id="settingBtn" class="btn btn-modal">
+                    <button id="settingsBtn" class="btn btn-modal">
                         change
                     </button>
                 </div>
                 <div class="col-sm-8 text-center">
-                    <button id="settingBtn" class="btn btn-hidden">
-                        packed house <a class="glyphicon glyphicon-chevron-down"></a>
+                    <button id="sizeBtn" class="btn btn-hidden">
+                        packed house <a class="glyphicon glyphicon-chevron-down align-arrow-with-text"></a>
                     </button>
                     <button id="distanceBtn" class="btn btn-hidden">
-                        within 0.5 miles of <a class="glyphicon glyphicon-chevron-down"></a>
+                        within 0.5 miles of <a class="glyphicon glyphicon-chevron-down align-arrow-with-text"></a>
                     </button>
                     <button id="locationBtn" class="btn btn-hidden">
-                        642 S Clark St, Chicago <a class="glyphicon glyphicon-chevron-down"></a>
+                        416 Beacon St, Boston MA <a class="glyphicon glyphicon-chevron-down align-arrow-with-text"></a>
                     </button>
                 </div>
             </div>
@@ -180,8 +181,45 @@ and open the template in the editor.
         
         <div id="feed" class="container toggle-content">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 well">
-                    
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="container-fluid panel-container">
+                                <div class="col-xs-10 text-left">
+                                    <h3 id="panelTitle" style="line-height: 30px;">
+                                        &nbsp;Crossroads Irish Pub&nbsp;<a class="glyphicon glyphicon-asterisk"></a>
+                                        <b id="distanceLabel">0.2 miles</b>
+                                    </h3>
+                                </div>
+                                <div class="col-xs-2 text-right">
+                                    <button id="liveFeedBtn" class="btn btn-modal">
+                                        live feed
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="container-fluid panel-container">
+                                <div class="col-xs-8 text-left">
+                                    <p>
+                                        <b>5</b>
+                                        &nbsp;check-ins tonight&nbsp;
+                                        <a href="#alerts" class="glyphicon glyphicon-thumbs-up"><b id="alertsBadge" class="badge">4</b></a>
+                                        &nbsp;
+                                        <a href="#alerts" class="glyphicon glyphicon-thumbs-down"><b id="alertsBadge" class="badge">1</b></a>
+                                    </p>
+                                    <p>packed house</p>
+                                    <p>4.5 stars</p>
+                                    <p>5 check-ins tonight</p>
+                                </div>
+                                <div class="col-xs-4 text-right">
+                                    <figure class="btn btn-image" style="background-image: url(img/feed/crossroads.jpg)">
+                                        <b style="color: #ededed;">pictures...</b>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -205,6 +243,7 @@ and open the template in the editor.
 	<script src="js/index/wow.min.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="js/feed/feed_custom.js"></script>
+    <script src="plugins/ion.rangeSlider-2.0.12/js/ion-rangSlider/ion.rangeSlider.js"></script>
     
     
 </body>

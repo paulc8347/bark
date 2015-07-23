@@ -31,6 +31,24 @@
     
 }
 
+.align-arrow-with-text {
+    position: relative;
+    top:3px;
+    left: 3px;
+}
+
+.panel-container {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    height: 30px;
+}
+
+
+p1 {
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+    font-weight: 300;
+}
 
 //end mine
 
@@ -68,9 +86,9 @@ h6 {
 }
 
 p {
-    margin: 0 0 20px;
-    font-size: 16px;
-    line-height: 1.6em;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+    font-weight: 300;
 }
 
 p.lead {
@@ -684,6 +702,27 @@ Parallax
     -moz-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
+
+.btn-image {
+    background-color: #666699;
+    color: #EDEDED;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    min-height: 150px;
+    max-height: 150px;
+    width: 150px;
+    border-radius: 15px;
+    line-height: 130px;
+}
+
+.btn-image:hover,
+.btn-image:focus {
+    background-color: #9494B8;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
 
 .btn-modal {
     background-color: #666699;
